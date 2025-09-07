@@ -45,35 +45,31 @@ The CloudTrail logs provided a definitive, immutable record of the attacker's ac
 | **Targeted Access** | Access to `dora-cloudbucket` | Following the `ListBuckets` discovery, the attacker focused on the `dora-cloudbucket`, which contained the sensitive file `Threat Intelligence.docx`. |
 | **Indicator of Compromise** | User: `KeyHunter` <br> IP: `102.88.109.159` | The user account and source IP address were confirmed as malicious IoCs. |
 
----
 
-## Screenshots & Logs
+
+## Screenshots
 The following screenshots provide a visual narrative of the detection, analysis, and remediation process.
 
 **Exhibit A: The Compromised User**
 The investigation began by identifying the suspicious IAM user, `KeyHunter`, which had been recently created and showed recent activity.
 <img width="1366" height="614" alt="eventjson" src="https://github.com/user-attachments/assets/ca4afd3e-141e-4fc7-bc40-23957eb8706a" />
 
-*(Use the drag-and-drop method to place your screenshot of the `KeyHunter` user in the IAM dashboard here)*
 
-**Exhibit B: The "Smoking Gun" in CloudTrail**
-A detailed view of the `ListBuckets` event in CloudTrail. This log is the critical piece of evidence, showing the `KeyHunter` user, the attacker's source IP, and the exact time of the discovery action.
+
 <img width="1365" height="563" alt="events1" src="https://github.com/user-attachments/assets/743f042e-57f6-465d-854e-0375b8265fd2" />
 
-*(Use the drag-and-drop method to place your screenshot of the detailed `ListBuckets` CloudTrail event here)*
-
-**Exhibit C: The High-Value Target**
+**Exhibit B: The High-Value Target**
 The sensitive file, `Threat Intelligence.docx`, residing in the `dora-cloudbucket`. This was the objective of the simulated attack.
 <img width="1352" height="516" alt="upload" src="https://github.com/user-attachments/assets/81913f7c-855e-483e-b0cc-7a8ab17d4601" />
 
-*(Use the drag-and-drop method to place your screenshot of the S3 bucket contents here)*
 
-**Exhibit D: Eradication and Remediation**
+
+**Exhibit C: Eradication and Remediation**
 The final step in the response was to delete the compromised `KeyHunter` user from IAM, immediately revoking the attacker's access and containing the threat.
 <img width="1148" height="249" alt="deleted done" src="https://github.com/user-attachments/assets/59abfc05-4ccd-4ba2-8b67-3501fa984b7a" />
 <img width="1366" height="584" alt="delete user" src="https://github.com/user-attachments/assets/ecaf3c07-0f67-4881-b9d6-9f2b4426c6e7" />
 
-*(Use the drag-and-drop method to place your screenshot of the user deletion confirmation here)*
+
 
 
 
